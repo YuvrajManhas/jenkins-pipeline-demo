@@ -23,7 +23,15 @@ pipeline {
                 sh 'python3 -m unittest -v'
             }
         }
+
+        stage('Run') {
+            steps {
+                echo 'Running application...'
+                sh 'python3 app.py'
+            }
+        }
     }
+    
 
     post {
         success {
